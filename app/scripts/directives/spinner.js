@@ -11,7 +11,7 @@ app.directive('spinner', function() {
     },
     template: '<div></div>',
     link: function(scope, element) {
-      var html = '<div class="pace"><div class="pace-activity">ttoototo</div></div>';
+      var html = '<div class="pace"><div class="pace-activity"></div></div>';
       element.html(html);
     }
   };

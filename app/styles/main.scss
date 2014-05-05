@@ -42,24 +42,51 @@ $dark : #33484F;
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
-@-webkit-keyframes color {
-        0% {
-            -webkit-filter: hue-rotate(0deg);
-        }
-        45% {
-            -webkit-filter: hue-rotate(-90deg);
-        }
-        50% {
-            -webkit-filter: hue-rotate(0deg);
-        }
-        85% {
-            -webkit-filter: hue-rotate(90deg);
-        }
-        100% {
-            -webkit-filter: hue-rotate(0deg);
-        }
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: 60px;
+  margin: 16% auto;
+}
 
-    }
+.pace .pace-activity {
+  z-index: 2000;
+  width: 64px;
+  height: 64px;
+  border: solid 4px transparent;
+  border-top-color: $orange;
+  border-left-color: $orange;
+  border-radius: 60px;
+  -webkit-animation: pace-spinner 400ms linear infinite;
+  -moz-animation: pace-spinner 400ms linear infinite;
+  -ms-animation: pace-spinner 400ms linear infinite;
+  -o-animation: pace-spinner 400ms linear infinite;
+  animation: pace-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes pace-spinner {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes pace-spinner {
+  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes pace-spinner {
+  0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes pace-spinner {
+  0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes pace-spinner {
+  0% { transform: rotate(0deg); transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -71,6 +98,9 @@ $dark : #33484F;
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+ul {
+    padding: 0;
 }
 li {
     list-style: none;
@@ -122,15 +152,14 @@ li {
     font-family: 'AvenirNextRegular';
     text-transform: uppercase;
 }
-
+#init {
+    text-align: center;
+}
 /* Main marketing message and sign up button */
 .contain {
     background-image: url('/images/back.png');
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-filter: hue-rotate(0deg);
-    animation: color 60s linear infinite;
-    -webkit-animation: color 60s linear infinite;
     text-align: center;
     border-top: 3px solid #F60;
     border-bottom: 3px solid #F60;
@@ -279,6 +308,9 @@ li {
             border-bottom: 1px solid $orange;
             display: block;
             
+        }
+        input {
+            margin: 20px auto;
         }
     }
 }

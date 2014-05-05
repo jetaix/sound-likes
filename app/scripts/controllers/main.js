@@ -4,7 +4,13 @@ angular.module('soundCloudAppApp')
 .controller('MainCtrl', function ($scope, $timeout, $http) {
 	
     $scope.apiKey = 'b54c0f76b20be90e6d13e95a590c7413';
+    $scope.init = true;
     $scope.connect = false;
+
+    $timeout(function(){
+        $scope.init = false;
+    }, 1000);
+
     SC.initialize({
         client_id: 'b54c0f76b20be90e6d13e95a590c7413',
         redirect_uri: 'http://127.0.0.1:9000/#/'

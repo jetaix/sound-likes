@@ -1,62 +1,64 @@
 <div class="header">
   <span class="glyphicon glyphicon-heart"></span><h3 class="text-muted">Sound'Likes</h3>
 </div>
-<spinner></spinner>
-<div ng-app="soundCloudAppApp" ng-controller="MainCtrl">
-  <div plangular data-src="http://soundcloud.com/jxnblk/plangular">
-<a href="" ng-click="player.play(track)" ng-hide="player.playing == track">Play</a>
-<a href="" ng-click="player.pause()" ng-show="player.playing == track">Pause</a>
-  </div>
-  <div ng-hide="connect">
-    <div class="contain animated fadeOut" ng-hide="connect">
-      <h1>Connect your Soundcloud</h1>
-      <p class="lead">
-        <span class="glyphicon glyphicon-heart"></span>
-      </p>
-      <p>
-        <a class="btn btn-lg btn-orange" ng-click="connection()">Connect your soundcloud <span class="glyphicon glyphicon-ok"></span>
-        </a>
-      
-      </p>
-    
-    </div>
+<div class="container" id="init" ng-show="init">
+  <spinner></spinner>
+  <p>Initialization...</p>
+</div>
 
-    <div class="container">
-      <div class="tagline">
-        <span class="glyphicon glyphicon-music"></span>
-        <h2>Filter your Soudncloud like's has never been easier</h2>
-        <span class="glyphicon glyphicon-headphones"></span>
-        <p>Good listening...</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="wrapper" class="animated fadeInUp" ng-show="connect">
-
+  <div ng-hide="init">
+    <div ng-hide="connect" class="animated fadeInUp">
       <div class="contain">
-          <div class="container">
-              <img class="avatar" ng-src="{{ avatar }}" alt="">
-              <h2 class="name">{{ full_name }}</h2>
-              <div class="description">'{{ description }}'</div>
-              <div class="website"><a href=" {{ website }} ">{{ website }}</a></div>
-              <div class="follower"><p>Follower:</p> <span class="count">{{ follower }}</span></div>
-              <div class="following"><p>Following:</p><span class="count">{{ following }}</span></div>
-              <div class="favorite"><span class="glyphicon glyphicon-heart"></span><span class="num">{{ favorite }}</span></div>
-
-          </div>
+        <h1>Connect your Soundcloud</h1>
+        <p class="lead">
+          <span class="glyphicon glyphicon-heart"></span>
+        </p>
+        <p>
+          <a class="btn btn-lg btn-orange" ng-click="connection()">Connect your soundcloud <span class="glyphicon glyphicon-ok"></span>
+          </a>
+        
+        </p>
+      
       </div>
-      <div class="container" id="sound">
-        <div>
-          <ul>
-            <li ng-repeat="sound in sounds" class="animated fadeInLeftBig">
-              <p class="title">Title : {{sound.title}}</p>
-              <p>Tag : {{sound.tag_list}}</p>
-              <p> {{ sound.id }}</p>
-            </li>
-          </ul>
+
+      <div class="container">
+        <div class="tagline">
+          <span class="glyphicon glyphicon-music"></span>
+          <h2>Filter your Soudncloud like's has never been easier</h2>
+          <span class="glyphicon glyphicon-headphones"></span>
+          <p>Good listening...</p>
         </div>
       </div>
+
+    </div>
+
+    <div id="wrapper" class="animated fadeInUp" ng-show="connect">
+        <div class="contain">
+            <div class="container">
+                <img class="avatar" ng-src="{{ avatar }}" alt="">
+                <h2 class="name">{{ full_name }}</h2>
+                <div class="description">'{{ description }}'</div>
+                <div class="website"><a href=" {{ website }} ">{{ website }}</a></div>
+                <div class="follower"><p>Follower:</p> <span class="count">{{ follower }}</span></div>
+                <div class="following"><p>Following:</p><span class="count">{{ following }}</span></div>
+                <div class="favorite"><span class="glyphicon glyphicon-heart"></span><span class="num">{{ favorite }}</span></div>
+
+            </div>
+        </div>
+        <div class="container" id="sound">
+          <input type="text" class="form-control" ng-model="search" placeholder="filter by tag, artist, title, genre">
+          <div>
+            <ul>
+              <li ng-repeat="sound in sounds | soundName:search" class="animated fadeInLeft">
+                <p class="title">Title : {{sound.title}}</p>
+                <p>Tag : {{sound.tag_list}}</p>
+                <p> {{ sound.id }}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
   </div>
 
 </div>
