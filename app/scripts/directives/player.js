@@ -2,7 +2,7 @@
 
 var app = angular.module('soundCloudAppApp');
 
-app.directive('spinner', function() {
+app.directive('player', function() {
   return {
     restrict: 'E',
     replace: true,
@@ -11,7 +11,7 @@ app.directive('spinner', function() {
     },
     template: '<div></div>',
     link: function(scope, element) {
-      var html = '<div class="pace"><div class="pace-activity"></div></div>';
+      var html = '<div>Player</div>';
       element.html(html);
     }
   };

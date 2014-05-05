@@ -1,9 +1,8 @@
 'use strict';
 
-var plangular = angular.module('soundCloudAppApp', []);
+var app = angular.module('soundCloudAppApp');
 
-// Filter to convert milliseconds to hours, minutes, seconds
-plangular.filter('playTime', function() {
+app.filter('playTime', function() {
     return function(ms) {
       var hours = Math.floor(ms / 36e5),
           mins = '0' + Math.floor((ms % 36e5) / 6e4),
@@ -21,4 +20,3 @@ plangular.filter('playTime', function() {
       };
     };
   });
-

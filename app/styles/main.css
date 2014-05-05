@@ -19,39 +19,23 @@
   src: url("/styles/fonts/avenir_next/AvenirNextRegular.eot");
   src: url("/styles/fonts/avenir_next/AvenirNextRegular.eot") format("embedded-opentype"), url("/styles/fonts/avenir_next/AvenirNextRegular.woff") format("woff"), url("/styles/fonts/avenir_next/AvenirNextRegular.ttf") format("truetype"), url("/styles/fonts/avenir_next/AvenirNextRegular.svg#AvenirNextRegular") format("svg"); }
 
-@-webkit-keyframes color {
-  0% {
-    -webkit-filter: hue-rotate(0deg); }
-
-  45% {
-    -webkit-filter: hue-rotate(-90deg); }
-
-  50% {
-    -webkit-filter: hue-rotate(0deg); }
-
-  85% {
-    -webkit-filter: hue-rotate(90deg); }
-
-  100% {
-    -webkit-filter: hue-rotate(0deg); } }
-
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  width: 14px;
-  margin: 60px auto; }
+  width: 60px;
+  margin: 16% auto; }
 
 .pace .pace-activity {
   z-index: 2000;
-  width: 14px;
-  height: 14px;
-  border: solid 2px transparent;
-  border-top-color: #33484f;
-  border-left-color: #33484f;
-  border-radius: 10px;
+  width: 64px;
+  height: 64px;
+  border: solid 4px transparent;
+  border-top-color: #ff6600;
+  border-left-color: #ff6600;
+  border-radius: 60px;
   -webkit-animation: pace-spinner 400ms linear infinite;
   -moz-animation: pace-spinner 400ms linear infinite;
   -ms-animation: pace-spinner 400ms linear infinite;
@@ -114,6 +98,9 @@ body {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+ul {
+  padding: 0; }
+
 li {
   list-style: none; }
 
@@ -160,14 +147,14 @@ li {
   font-family: 'AvenirNextRegular';
   text-transform: uppercase; }
 
+#init {
+  text-align: center; }
+
 /* Main marketing message and sign up button */
 .contain {
   background-image: url("/images/back.png");
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-filter: hue-rotate(0deg);
-  animation: color 60s linear infinite;
-  -webkit-animation: color 60s linear infinite;
   text-align: center;
   border-top: 3px solid #F60;
   border-bottom: 3px solid #F60;
@@ -292,3 +279,5 @@ li {
     width: 100%;
     border-bottom: 1px solid #ff6600;
     display: block; }
+  #wrapper #sound input {
+    margin: 20px auto; }
