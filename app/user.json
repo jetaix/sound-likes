@@ -1,0 +1,38 @@
+{
+   "id":11851648,
+   "kind":"user",
+   "permalink":"jonathan-etaix",
+   "username":"Jonathanlesoleil",
+   "uri":"https://api.soundcloud.com/users/11851648",
+   "permalink_url":"http://soundcloud.com/jonathan-etaix",
+   "avatar_url":"https://i1.sndcdn.com/avatars-000081558529-lgl4u7-large.jpg?61e8f21",
+   "country":"France",
+   "first_name":"Jonathan",
+   "last_name":"Etaix",
+   "full_name":"Jonathan Etaix",
+   "description":"",
+   "city":"Paris",
+   "discogs_name":null,
+   "myspace_name":null,
+   "website":"http://jonathan-etaix.fr/",
+   "website_title":"",
+   "online":false,
+   "track_count":1,
+   "playlist_count":0,
+   "plan":"Free",
+   "public_favorites_count":274,
+   "followers_count":38,
+   "followings_count":137,
+   "subscriptions":[
+
+   ],
+   "upload_seconds_left":7174,
+   "quota":{
+      "unlimited_upload_quota":false,
+      "upload_seconds_used":25,
+      "upload_seconds_left":7174
+   },
+   "private_tracks_count":1,
+   "private_playlists_count":0,
+   "primary_email_confirmed":true
+}
