@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 0.0.0.0,
+        port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -226,6 +226,14 @@ module.exports = function (grunt) {
       }
     },
 
+    sass: {
+      dist: {
+        files: {
+          '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+        }
+      }
+    },
+
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
@@ -327,7 +335,7 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+        // 'compass:server'
       ],
       test: [
         'compass'
@@ -382,9 +390,10 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'bowerInstall',
+      'sass',
+      // 'bowerInstall',
       'concurrent:server',
-      'autoprefixer',
+      // 'autoprefixer',
       'connect:livereload',
       'watch'
     ]);

@@ -34,12 +34,27 @@
     "karma-ng-scenario": "~0.1.0",
     "grunt-karma": "~0.8.3",
     "karma": "~0.12.14",
-    "karma-ng-html2js-preprocessor": "~0.1.0"
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "grunt-contrib-sass": "~0.7.3"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "description": "## web app use :  - yeoman - bower - grunt - angularjs - soundcloud api",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jetaix/sound-likes.git"
+  },
+  "author": "jonathan etaix",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jetaix/sound-likes/issues"
+  },
+  "homepage": "https://github.com/jetaix/sound-likes"
 }
