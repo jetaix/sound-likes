@@ -14,10 +14,6 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/callback', {
-        templateUrl: 'views/callback.html',
-        controller: 'MainCtrl'
-      })
       .otherwise({
         redirectTo: '/'
       });

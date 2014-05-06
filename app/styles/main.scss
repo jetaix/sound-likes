@@ -4,38 +4,7 @@ $font-url: "/styles/fonts";
 $orange: #ff6600;
 $dark : #33484F;
 /* Font-Face declaration */
-@font-face {
-    font-family: 'AvenirNextMedium';
-    src: url('#{$font-url}/avenir_next/AvenirNextMedium.eot');
-    src: url('#{$font-url}/avenir_next/AvenirNextMedium.eot') format('embedded-opentype'),
-         url('#{$font-url}/avenir_next/AvenirNextMedium.woff') format('woff'),
-         url('#{$font-url}/avenir_next/AvenirNextMedium.ttf') format('truetype'),
-         url('#{$font-url}/avenir_next/AvenirNextMedium.svg#AvenirNextMedium') format('svg');
-}
-@font-face {
-    font-family: 'AvenirNextDemiBold';
-    src: url('#{$font-url}/avenir_next/AvenirNextDemiBold.eot');
-    src: url('#{$font-url}/avenir_next/AvenirNextDemiBold.eot') format('embedded-opentype'),
-         url('#{$font-url}/avenir_next/AvenirNextDemiBold.woff') format('woff'),
-         url('#{$font-url}/avenir_next/AvenirNextDemiBold.ttf') format('truetype'),
-         url('#{$font-url}/avenir_next/AvenirNextDemiBold.svg#AvenirNextDemiBold') format('svg');
-}
-@font-face {
-    font-family: 'AvenirNextBold';
-    src: url('#{$font-url}/avenir_next/AvenirNextBold.eot');
-    src: url('#{$font-url}/avenir_next/AvenirNextBold.eot') format('embedded-opentype'),
-         url('#{$font-url}/avenir_next/AvenirNextBold.woff') format('woff'),
-         url('#{$font-url}/avenir_next/AvenirNextBold.ttf') format('truetype'),
-         url('#{$font-url}/avenir_next/AvenirNextBold.svg#AvenirNextBold') format('svg');
-}
-@font-face {
-    font-family: 'AvenirNextRegular';
-    src: url('#{$font-url}/avenir_next/AvenirNextRegular.eot');
-    src: url('#{$font-url}/avenir_next/AvenirNextRegular.eot') format('embedded-opentype'),
-         url('#{$font-url}/avenir_next/AvenirNextRegular.woff') format('woff'),
-         url('#{$font-url}/avenir_next/AvenirNextRegular.ttf') format('truetype'),
-         url('#{$font-url}/avenir_next/AvenirNextRegular.svg#AvenirNextRegular') format('svg');
-}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @mixin transition-all {
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
@@ -98,6 +67,8 @@ $dark : #33484F;
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 ul {
     padding: 0;
@@ -149,7 +120,7 @@ li {
     line-height: 40px;
     padding-bottom: 19px;
     color: #ff6600;
-    font-family: 'AvenirNextRegular';
+    font-weight: 600;
     text-transform: uppercase;
 }
 #init {
@@ -157,9 +128,9 @@ li {
 }
 /* Main marketing message and sign up button */
 .contain {
-    background-image: url('/images/back.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('/images/pattern.png'), url('/images/back.png');
+    background-repeat: repeat, no-repeat;
+    background-size: 1px, cover;
     text-align: center;
     border-top: 3px solid #F60;
     border-bottom: 3px solid #F60;
@@ -171,13 +142,14 @@ li {
         margin-top: 30px;
         margin-bottom: 30px;
         text-transform: uppercase;
-        font-family: 'AvenirNextBold';
+        font-weight: 800;
         letter-spacing: 2px;
         color: #FFF;
     }
     .lead {
         span {
             color: #ff6600;
+            font-weight: 800;
             font-size: 70px;
             margin-bottom: 50px;
             @include transition-all;
@@ -207,9 +179,11 @@ li {
         color: #ff6600;
     }
     h2 {
-        font-family: 'AvenirNextBold';
+        font-weight: 700;
         font-size: 30px;
         margin-bottom: 40px;
+        font-weight: 200;
+        font-style: italic;
     }
     .glyphicon-headphones {
         font-size: 30px;
@@ -217,7 +191,7 @@ li {
 
     p {
         font-size: 20px;
-        font-family: 'AvenirNextRegular';
+        font-weight: 300;
     }
 }
 
@@ -226,7 +200,6 @@ li {
 
 #wrapper {
     color: #FFF;
-    font-family: 'AvenirNextRegular';
     .contain {
         animation: none;
         -webkit-animation: none;
@@ -240,11 +213,11 @@ li {
         background-color: #FFF;
         font-size: 17px;
         line-height: 40px;
-        font-family: 'AvenirNextDemiBold';
+        font-weight: 600;
         border: 2px solid $dark;
     }
     .name {
-        font-family: 'AvenirNextRegular';
+        font-weight: 400;
         text-shadow: 0 1px 4px $dark;
     }
     .avatar {
@@ -263,13 +236,13 @@ li {
     .description {
         color: $dark;
         font-size: 15px;
-        font-family: 'AvenirNextBold';
+        font-weight: 600;
     }
     .follower, .following {
         display: inline-block;
         margin: 20px;
         color: $dark;
-        font-family: 'AvenirNextDemiBold';
+        font-weight: 500;
     }
     .favorite {
         clear: both;
@@ -290,7 +263,7 @@ li {
             position: relative;
             top: -55px;
             font-size: 20px;
-            font-family: 'AvenirNextRegular';
+            font-weight: 400;
             width: 5%;
             margin: 0 auto;
             left: 15px;
@@ -301,7 +274,7 @@ li {
             padding: 15px;
             background-color: #dedede;
             margin-bottom: 20px;
-            font-family: 'AvenirNextDemiBold';
+            font-weight: 600;
             color: $dark;
             font-size: 13px;
             width: 100%;
@@ -314,3 +287,31 @@ li {
         }
     }
 }
+
+footer {
+    #share {
+        margin: 20px auto;
+        width: 280px;
+    }
+    .fb-like, .twitter {
+        float: left;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    #powered {
+        text-align: center;
+        padding-top: 42px;
+        clear: both;
+        span {
+            color: #f12f32;
+            font-size: 20px;
+        }
+        img {
+            width: 50px;
+        }
+    }
+}
+
+
+
+
