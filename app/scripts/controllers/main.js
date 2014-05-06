@@ -2,7 +2,6 @@
 
 angular.module('soundCloudAppApp')
 .controller('MainCtrl', function ($scope, $timeout, $http) {
-	$scope.nameFilter = null;
     $scope.apiKey = 'b54c0f76b20be90e6d13e95a590c7413';
     $scope.redirect_uri = 'http://127.0.0.1:9000/#/';
     $scope.init = true;
