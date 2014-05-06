@@ -17,9 +17,7 @@
         <p>
           <a class="btn btn-lg btn-orange" ng-click="connection()">Connect your soundcloud <span class="glyphicon glyphicon-ok"></span>
           </a>
-        
         </p>
-      
       </div>
 
       <div class="container">
@@ -43,7 +41,6 @@
                 <div class="follower"><p>Follower:</p> <span class="count">{{ follower }}</span></div>
                 <div class="following"><p>Following:</p><span class="count">{{ following }}</span></div>
                 <div class="favorite"><span class="glyphicon glyphicon-heart"></span><span class="num">{{ favorite }}</span></div>
-
             </div>
         </div>
         <div class="container" id="sound">
@@ -51,10 +48,20 @@
           <div>
             <ul>
               <li ng-repeat="sound in sounds | soundName:search" class="animated fadeInLeft">
-                <p class="title">Title : {{sound.title}}</p>
-                <p>Tag : {{sound.tag_list}}</p>
-                <p> {{ sound.id }}</p>
-                <p> {{ sound.permalink_url }}</p>
+                <p class="title"><a ng-href="{{ sound.permalink_url }}">Title : {{ sound.title }}</a></p>
+                <p>Tag : {{ sound.tag_list }}</p>
+                <p>Description: {{ sound.description | words:100 }}</p>
+                <p>Genre : {{ sound.genre }}</p>
+                <p>duration : {{ sound.duration }}</p>
+                <p>Created at : {{ sound.created_at }}</p>
+                <p>Like : {{ sound.favoritings_count }}</p>
+                <p>Playback count : {{ sound.playback_count }} </p>
+                <p>Download count : {{ sound.download_count }} </p>
+                <img ng-src="{{ sound.artwork_url }}" alt="" width="70">
+                <a ng-href="{{ sound.download_url }}">Download</a>
+                <div>User post: <p><a ng-href="{{ sound.user.permalink_url }}">{{ sound.user.username }}</a></p>
+                  <p><img ng-src="{{ sound.user.avatar_url }}" alt="" width="50"></p>
+                </div>
                 <p>
                   <div plangular data-src="{{ sound.permalink_url }}" class="media">
                     <a href="" ng-click="player.play(track)" ng-hide="player.playing == track" class="img">
