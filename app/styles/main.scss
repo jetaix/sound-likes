@@ -248,7 +248,7 @@ li {
         clear: both;
         color: #FFF;
         .glyphicon {
-            left: 10px;
+            left: -24px;
             display: block;
             text-align: center;
             margin: 0 auto;
@@ -257,7 +257,7 @@ li {
             font-size: 75px;
             color: $orange;
             position: relative;
-            left: -28px;
+            left: -5px;
         }
         .num {
             position: relative;
@@ -270,17 +270,26 @@ li {
         }
     }
     #sound {
-        li {
+        .box {
+            height: 300px;
             padding: 15px;
-            background-color: #dedede;
             margin-bottom: 20px;
             font-weight: 600;
             color: $dark;
             font-size: 13px;
-            width: 100%;
-            border-bottom: 1px solid $orange;
-            display: block;
-            
+        }
+        .innerbox {
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 300px;
+            position: relative;
+        }
+        .player {
+            .control {
+                position: absolute;
+                left: 12%;
+                top: 40%;
+            }
         }
         input {
             margin: 20px auto;
