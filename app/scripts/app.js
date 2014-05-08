@@ -5,16 +5,13 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'LocalStorageModule'
   ])
 
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/Procfile', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
