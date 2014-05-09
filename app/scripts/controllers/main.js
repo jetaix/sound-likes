@@ -5,6 +5,7 @@ angular.module('soundCloudAppApp')
     $scope.apiKey = 'b54c0f76b20be90e6d13e95a590c7413';
     $scope.redirectUri = 'http://127.0.0.1:9000/#/';
     $scope.play = false;
+    $scope.limit = 20;
     var app = localStorage.getToken();
     
     SC.initialize({
@@ -39,14 +40,26 @@ angular.module('soundCloudAppApp')
         });
     };
     $scope.getSound = function (id){
-        $http({method: 'GET', url: 'http://api.soundcloud.com/users/' + id + '/favorites.json?client_id=' + $scope.apiKey}).
+        $http({method: 'GET', url: 'http://api.soundcloud.com/users/' + id + '/favorites.json?client_id=' + $scope.apiKey + '&limit=' + $scope.limit + '&offset=0'}).
          success(function(data, status, headers, config) {
              $scope.dataSound = data;
              $scope.connect = true;
+             console.log($scope.dataSound);
         }).
         error(function(data, status, headers, config) {
          console.log('error');
         });
+    };
+    $scope.loadMore = function (id){
+        // $http({method: 'GET', url: 'http://api.soundcloud.com/users/' + id + '/favorites.json?client_id=' + $scope.apiKey + '&limit=' + $scope.limit + '&offset=' + $scope.limit}).
+        //  success(function(data2, status, headers, config) {
+        //      $scope.dataSound.push( data2 );
+        //      console.log(data2);
+        // }).
+        // error(function(data, status, headers, config) {
+        //  console.log('error');
+        // });
+        console.log('loadmore');
     };
     $scope.initialization = function() {
         $scope.init = true;

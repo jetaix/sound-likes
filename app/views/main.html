@@ -39,12 +39,12 @@
   <div id="wrapper" class="animated fadeInUp" ng-show="connect">
       <div class="contain">
           <div class="container">
-              <img class="avatar" ng-src="{{ userStorage.avatar }}" alt="">
+              <div class="follower"><p>Follower:</p> <span class="count">{{ userStorage.followers }}</span></div><img class="avatar" ng-src="{{ userStorage.avatar }}" alt=""><div class="following"><p>Following:</p><span class="count">{{ userStorage.followings }}</span></div>
               <h2 class="name">{{ userStorage.name }}</h2>
-              <div class="description">'{{ userStorage.description }}'</div>
+              <div class="description">{{ userStorage.description }}</div>
               <div class="website"><a href=" {{ website }} ">{{ userStorage.website }}</a></div>
-              <div class="follower"><p>Follower:</p> <span class="count">{{ userStorage.followers }}</span></div>
-              <div class="following"><p>Following:</p><span class="count">{{ userStorage.followings }}</span></div>
+              
+              
               <div class="favorite"><span class="glyphicon glyphicon-heart"></span><span class="num">{{ userStorage.favorites }}</span></div>
           </div>
       </div>
@@ -86,6 +86,7 @@
                 
               </div>
             </div>
+            <p class="load" ng-click="loadMore(userStorage.id)">Load more</p>
           </div>
         </div>
       </div>
