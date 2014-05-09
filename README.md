@@ -1,5 +1,5 @@
 #v.0.1
-#Filter your Soundcloud like's
+#Filter your Soundcloud like's by tag, artist, title
 
 ## web app use : 
 - yeoman
