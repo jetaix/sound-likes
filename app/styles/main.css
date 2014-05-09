@@ -97,7 +97,7 @@ li {
 /* Custom page header */
 .header {
   margin-bottom: 14px; }
-  .header span {
+  .header span#logo {
     margin-left: 30px;
     display: block;
     float: left;
@@ -116,6 +116,21 @@ li {
     background: -ms-linear-gradient(top, #ff6600 0%, #ff2900 100%);
     background: linear-gradient(to bottom, #ff6600 0%, #ff2900 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6600', endColorstr='#ff2900',GradientType=0 ); }
+  .header span#logout {
+    text-align: right;
+    font-size: 25px;
+    color: #ff6600; }
+    .header span#logout:before {
+      position: relative;
+      top: 6px; }
+    .header span#logout a {
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 20px;
+      padding-left: 15px;
+      font-size: 15px;
+      color: #33484f;
+      margin-right: 40px; }
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -230,9 +245,11 @@ li {
     font-weight: 600; }
   #wrapper .follower, #wrapper .following {
     display: inline-block;
-    margin: 20px;
+    margin: 0 20px;
     color: #33484f;
-    font-weight: 500; }
+    font-weight: 500;
+    position: relative;
+    top: 30px; }
   #wrapper .favorite {
     clear: both;
     color: #FFF; }
@@ -253,25 +270,93 @@ li {
       font-weight: 400;
       width: 5%;
       margin: 0 auto;
-      left: 15px; }
+      left: 5px; }
   #wrapper #sound .box {
-    height: 300px;
-    padding: 15px;
-    margin-bottom: 20px;
+    height: 185px;
+    padding: 10px;
+    margin-bottom: 1.5%;
     font-weight: 600;
     color: #33484f;
     font-size: 13px; }
   #wrapper #sound .innerbox {
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 300px;
-    position: relative; }
-  #wrapper #sound .player .control {
+    background-size: 100%;
+    height: 170px;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in; }
+    #wrapper #sound .innerbox.active {
+      box-shadow: 0px 0px 10px #33484f; }
+    #wrapper #sound .innerbox:hover .control {
+      -webkit-transform: scale(2);
+      -moz-transform: scale(2);
+      -o-transform: scale(2);
+      transform: scale(2); }
+      #wrapper #sound .innerbox:hover .control svg path {
+        fill: #ff6600; }
+  #wrapper #sound .tag {
+    color: #FFF; }
+  #wrapper #sound .control {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
     position: absolute;
-    left: 12%;
-    top: 40%; }
+    left: 42%;
+    top: 44%; }
+    #wrapper #sound .control svg path {
+      fill: #ffffff; }
+    #wrapper #sound .control .pause svg path {
+      fill: #ff6600; }
+  #wrapper #sound progress {
+    position: absolute;
+    bottom: -16px;
+    width: 100%;
+    background-color: #33484f; }
+  #wrapper #sound progress::-webkit-progress-bar {
+    background-color: #33484f; }
+  #wrapper #sound progress::-webkit-progress-value {
+    background-color: #ff6600;
+    border-right: 1px solid #ffffff; }
+  #wrapper #sound progress::-moz-progress-bar {
+    background-color: #33484f; }
+  #wrapper #sound .media.active .innerbox {
+    background: #F00; }
+  #wrapper #sound .title a {
+    color: #FFF;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    display: inline-block; }
+  #wrapper #sound .title span {
+    float: right;
+    color: #ff6600;
+    position: relative;
+    top: -20px;
+    right: 5px;
+    font-size: 11px; }
   #wrapper #sound input {
-    margin: 20px auto; }
+    margin: 20px auto;
+    height: 60px;
+    font-size: 25px;
+    color: #33484f;
+    font-weight: 600; }
+    #wrapper #sound input:focus {
+      border-color: #ff6600;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+      box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.35); }
+  #wrapper .load {
+    color: #33484f;
+    clear: both;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer; }
 
 footer #share {
   margin: 50px auto 20px auto;
