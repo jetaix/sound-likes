@@ -87,7 +87,7 @@ li {
 /* Custom page header */
 .header {
     margin-bottom: 14px;
-    span {
+    span#logo {
         margin-left: 30px;
         display: block;
         float: left;
@@ -107,6 +107,24 @@ li {
         background: linear-gradient(to bottom, #ff6600 0%,#ff2900 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6600', endColorstr='#ff2900',GradientType=0 );
         
+    }
+    span#logout {
+        text-align: right;
+        font-size: 25px;
+        color: $orange;
+        &:before {
+            position: relative;
+            top: 6px;
+        }
+        a {
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 20px;
+            padding-left: 15px;
+            font-size: 15px;
+            color: $dark;
+            margin-right: 40px;
+        }
     }
 }
 
@@ -266,33 +284,115 @@ li {
             font-weight: 400;
             width: 5%;
             margin: 0 auto;
-            left: 15px;
+            left: 5px;
         }
     }
     #sound {
         .box {
-            height: 300px;
-            padding: 15px;
-            margin-bottom: 20px;
+            height: 185px;
+            padding: 10px;
+            margin-bottom: 1.5%;
             font-weight: 600;
             color: $dark;
             font-size: 13px;
         }
         .innerbox {
             background-repeat: no-repeat;
-            background-size: contain;
-            height: 300px;
+            background-size: 100%;
+            height: 170px;
             position: relative;
+            @include transition-all;
+            &.active {
+                box-shadow: 0px 0px 10px $dark;
+            }
+            &:hover {
+                .control {
+                    -webkit-transform: scale(2);
+                    -moz-transform: scale(2);
+                    -o-transform: scale(2);
+                    transform: scale(2);
+                    svg {
+                        path {
+                            fill: $orange;
+                        }
+                    }
+                }
+                
+            }
         }
-        .player {
-            .control {
-                position: absolute;
-                left: 12%;
-                top: 40%;
+        .tag {
+            color: #FFF;
+        }
+        .control {
+            @include transition-all;
+            position: absolute;
+            left: 42%;
+            top: 44%;
+            svg {
+                path {
+                    fill: #ffffff;
+                }
+            }
+            .pause {
+                svg {
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
+        }
+        progress {
+            position: absolute;
+            bottom: -16px;
+            width: 100%;
+            background-color: $dark;
+        }
+        progress::-webkit-progress-bar {
+            background-color: $dark;
+        }  
+        progress::-webkit-progress-value {
+            background-color: $orange;
+            border-right: 1px solid #ffffff;
+        }  
+        progress::-moz-progress-bar {
+            background-color: $dark;
+        } 
+
+        .media.active .innerbox {
+            background: #F00;
+        }
+        .title {
+            a {
+                color: #FFF;
+                height: 40px;
+                font-size: 12px;
+                font-weight: 300;
+                padding: 5px;
+                background-color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+                display: inline-block;
+            }
+            span {
+                float: right;
+                color: $orange;
+                position: relative;
+                top: -20px;
+                right: 5px;
+                font-size: 11px;
             }
         }
         input {
             margin: 20px auto;
+            height: 60px;
+            font-size: 25px;
+            color: $dark;
+            font-weight: 600;
+            &:focus {
+                border-color: $orange;
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+                -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+                box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+            }
         }
     }
 }

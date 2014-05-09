@@ -4,6 +4,7 @@ angular.module('soundCloudAppApp')
 .controller('MainCtrl', function ($scope, $timeout, $http, $cookies, localStorage) {
     $scope.apiKey = 'b54c0f76b20be90e6d13e95a590c7413';
     $scope.redirectUri = 'http://127.0.0.1:9000/#/';
+    $scope.play = false;
     var app = localStorage.getToken();
     
     SC.initialize({
